@@ -13,7 +13,7 @@ var uid = ref('@')
 var num = ref(1000)
 
 const value = computed(() => {
-  return `give ${uid.value} ${value2.value} x${num.value}`
+  return `/give ${value2.value} x${num.value}`
 })
 const options = reactive([
   {
@@ -70,10 +70,6 @@ const send: any = inject("send")
 
 <template>
   <div class="commuse">
-    <div class="commuse-item">
-      <div class="text-slate-900 dark:text-slate-100"> UID: </div>
-      <a-input v-model="uid" placeholder="请输入UID" allow-clear />
-    </div>
 
     <div class="commuse-item">
       <div class="text-slate-900 dark:text-slate-100"> 物品: </div>

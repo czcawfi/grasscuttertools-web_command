@@ -9,22 +9,21 @@ const { text, isSupported, copy } = useClipboard()
 const appStore = useAppStore()
 
 var value2 = ref()
-var value3 = ref('give')
-var uid = ref("@")
+var value3 = ref('/give')
 var num = ref()
 
 const value = computed(() => {
-  return `${value3.value} ${uid.value} ${value2.value} x${num.value}`
+  return `${value3.value} ${value2.value} x${num.value}`
 })
 const options = reactive(thing)
 const options2 = reactive([
   {
     label: '给予指定玩家一定数量的物品',
-    value: 'give',
+    value: '/give',
   },
   {
     label: '在指定玩家周围掉落指定物品',
-    value: 'drop',
+    value: '/drop',
   },
 ])
 const message = Message
@@ -40,10 +39,6 @@ const send: any = inject("send")
 
 <template>
   <div class="commuse">
-    <div class="commuse-item">
-      <div class="text-slate-900 dark:text-slate-100"> UID: </div>
-      <a-input v-model="uid" placeholder="请输入UID" allow-clear />
-    </div>
     <div class="commuse-item">
       <div class="text-slate-900 dark:text-slate-100"> 获取方式: </div>
       <a-cascader allow-search v-model="value3" :options="options2" placeholder="" filterable />

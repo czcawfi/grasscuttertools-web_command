@@ -10,10 +10,9 @@ const { text, isSupported, copy } = useClipboard()
 
 var value2 = ref("hp")
 var num = ref()
-var uid = ref("@")
 
 const value = computed(() => {
-  return `setstats ${uid.value} ${value2.value} ${num.value}`
+  return `/setstats ${value2.value} ${num.value}`
 })
 const options = reactive(role)
 const message = Message
@@ -29,10 +28,6 @@ function copyvalue() {
 <template>
   <div class="commuse">
     <div class="title"> 直接修改当前角色的面板 </div>
-     <div class="commuse-item">
-      <div class="text-slate-900 dark:text-slate-100"> UID: </div>
-      <a-input v-model="uid" placeholder="请输入UID" allow-clear />
-    </div>
     <div class="commuse-item">
       <div class="text-slate-900 dark:text-slate-100"> 属性: </div>
       <a-cascader allow-search v-model="value2" :options="options" placeholder="" filterable />

@@ -12,10 +12,9 @@ const appStore = useAppStore()
 var value2 = ref(21010101)
 var grade = ref(80)
 var num = ref(10)
-var uid = ref('@')
 
 const value = computed(() => {
-  return `spawn ${uid.value} ${value2.value} ${num.value} ${grade.value}`
+  return `/spawn ${value2.value} ${num.value} ${grade.value}`
 })
 const options = reactive(monster)
 const message = Message
@@ -31,10 +30,6 @@ const send: any = inject("send")
 
 <template>
   <div class="commuse">
-    <div class="commuse-item">
-      <div class="text-slate-900 dark:text-slate-100"> UID: </div>
-      <a-input v-model="uid" placeholder="请输入UID" allow-clear />
-    </div>
     <div class="commuse-item">
       <div class="text-slate-900 dark:text-slate-100"> 怪物: </div>
       <a-cascader allow-search v-model="value2" :options="options" placeholder="" filterable />

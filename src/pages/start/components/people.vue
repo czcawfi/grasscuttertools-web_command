@@ -4,24 +4,26 @@ import { reactive, ref, computed } from 'vue'
 import { useClipboard } from '@vueuse/core'
 import { Message } from '@arco-design/web-vue'
 import { useAppStore } from '@/store/modules/app'
-import weapon from './json/weapon.json'
+
+import people from './json/people.json'
 const { text, isSupported, copy } = useClipboard()
 const appStore = useAppStore()
 
-var value2 = ref(12510)
-var num = ref(5)
-var grade = ref(90)
-var refined = ref(5)
+var value2 = ref(1002)//输入框默认数值
+var grade = ref(90)//等级
+var num = ref(6)//命座
+var chua_grade = ref(10)//天赋等级
 
 const value = computed(() => {
-  return `/give ${value2.value} x${num.value} lv${grade.value} r${refined.value}`
+  return `/give ${value2.value} lv${grade.value} c${num.value} sl${chua_grade.value}`
 })
-const options = reactive(weapon)
+const options = reactive(people)
+const message = Message
 
 function copyvalue() {
   copy(value.value)
   if (isSupported) {
-    Message.success(`已复制${value.value}`)
+    message.success(`已复制${value.value}`)
   }
 }
 const send: any = inject("send")
@@ -30,20 +32,20 @@ const send: any = inject("send")
 <template>
   <div class="commuse">
     <div class="commuse-item">
-      <div class="text-slate-900 dark:text-slate-100"> 武器: </div>
-      <a-cascader allow-search v-model="value2" :options="options" placeholder="请输入物品" filterable />
-    </div>
-    <div class="commuse-item">
-      <div class="text-slate-900 dark:text-slate-100"> 数量: </div>
-      <a-input-number v-model="num" placeholder="" mode="button" size="large" class="input-demo" />
+      <div class="text-slate-900 dark:text-slate-100"> 怪物: </div>
+      <a-cascader allow-search v-model="value2" :options="options" placeholder="" filterable />
     </div>
     <div class="commuse-item">
       <div class="text-slate-900 dark:text-slate-100"> 等级: </div>
-      <a-input-number v-model="grade" placeholder="请输入" mode="button" size="large" class="input-demo" />
+      <a-input-number v-model="grade" placeholder="请输入数量" mode="button" size="large" class="input-demo" />
     </div>
     <div class="commuse-item">
-      <div class="text-slate-900 dark:text-slate-100"> 精炼等级: </div>
-      <a-input-number v-model="refined" placeholder="请输入" mode="button" size="large" class="input-demo" />
+      <div class="text-slate-900 dark:text-slate-100"> 命座: </div>
+      <a-input-number v-model="num" placeholder="请输入数量" mode="button" size="large" class="input-demo" />
+    </div>
+    <div class="commuse-item">
+      <div class="text-slate-900 dark:text-slate-100"> 天赋等级: </div>
+      <a-input-number v-model="num" placeholder="请输入数量" mode="button" size="large" class="input-demo" />
     </div>
     <div class="generate">
       <a-input v-model="value" placeholder="" />

@@ -12,13 +12,13 @@ import { useAppStore } from '@/store'
 import { throwStatement } from '@babel/types';
 const appStore = useAppStore()
 const datav = reactive([
-  { name: '常用', path: "/start/commuse" },
+  { name: '快捷指令', path: "/start/other" },
   { name: '圣遗物', path: "/start/holyrelic" },
   { name: '怪物生成', path: "/start/monster" },
-  { name: '其它', path: "/start/other" },
-  { name: '武器', path: "/start/weapon" },
   { name: '物品', path: "/start/thing" },
-  // { name: '角色属性', path: "/start/role" },
+  { name: '角色', path: "/start/people" },
+  { name: '武器', path: "/start/weapon" },
+  { name: '角色属性', path: "/start/role" },
 ])
 
 const datav2 = reactive([
@@ -75,7 +75,7 @@ watch(
         <template #icon>
           <IconApps></IconApps>
         </template>
-        <template #title>控制台代码生成 </template>
+        <template #title>指令生成 </template>
         <a-menu-item v-for="(item, index) in datav" :key="item.path" @click="topath(item.path)">
           {{ item.name }}
         </a-menu-item>
@@ -84,7 +84,7 @@ watch(
         <template #icon>
           <IconBug></IconBug>
         </template>
-        <template #title>{{ GMTitle }}</template>
+        <template #title>废弃功能 </template>
         <a-menu-item v-for="(item, index) in datav2" :key="item.path" @click="topath(item.path)">
           {{ item.name }}
         </a-menu-item>

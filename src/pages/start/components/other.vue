@@ -11,36 +11,36 @@ const appStore = useAppStore()
 const options = reactive([
   {
     title: '无敌',
-    value: 'prop god on',
+    value: '/prop god on',
   },
   {
     title: '无限体力',
-    value: 'prop ns on',
+    value: '/prop ns on',
   },
   {
     title: '无限能量',
-    value: 'prop ue on',
+    value: '/prop ue on',
   },
   {
     title: '治疗',
-    value: 'h',
+    value: '/h',
   },
   {
     title: '设置纪行等级',
     // isuse: '均可使用',
-    value: 'prop bp 50',
+    value: '/prop bp 50',
   },
   {
     title: '一键解锁深渊',
-    value: 'prop ut 12',
+    value: '/prop ut 12',
   },
   {
     title: '世界等级8',
-    value: 'prop wl 8',
+    value: '/prop wl 8',
   },
   {
     title: '全队充能',
-    value: 'spawn 2008 25',
+    value: '/spawn 2008 25',
   },
 ])
 const message = Message

@@ -32,6 +32,10 @@ let constantRoutes = [
         component: () => import('@/pages/start/components/monster.vue'),
       },
       {
+        path: "/start/people",
+        component: () => import('@/pages/start/components/people.vue'),
+      },
+      {
         path: "/start/other",
         component: () => import('@/pages/start/components/other.vue'),
       },
