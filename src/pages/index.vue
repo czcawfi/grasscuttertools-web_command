@@ -1,11 +1,14 @@
 <template>
   <Header />
   <div class="ct">
+    <!-- 添加图片 -->
+    <img src="https://img.morax.top/file/4b572184f3de63e1c361f.png" alt="Your Image" class="centered-image" />
+
     <div class="title">
-      GrasscutterTools
+      原神Tools
     </div>
     <div class="introduce">
-      割草机控制台代码快速生成
+      适用于gc的web命令生成器
     </div>
     <div class="start">
       <router-link to="/start/commuse" class="mr-3 flex-none w-[3.0625rem] md:w-auto leading-6 dark:text-slate-200">
@@ -18,28 +21,38 @@
 <script lang="ts">
 
 </script>
+
 <style lang="less">
 .ct {
   width: 500px;
   margin: auto;
   margin-top: 20vh;
+  text-align: center; 
+}
 
-  .title {
-    text-align: center;
-    font-size: 28px;
-  }
+.centered-image {
+  width: 100%; 
+  max-width: 150px; 
+  margin: 0 auto 10px; 
+  display: block; 
+  border-radius: 10px; 
+}
 
-  .introduce {
-    margin-top: 10px;
-    color: #545343;
-    text-align: center;
-    font-size: 16px;
-  }
+.title {
+  text-align: center;
+  font-size: 28px;
+}
 
-  .start{
-    margin-top: 10px;
-    text-align: center;
-    font-size: 24px;
-  }
+.introduce {
+  margin-top: 10px;
+  color: #545343;
+  text-align: center;
+  font-size: 16px;
+}
+
+.start {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 24px;
 }
 </style>

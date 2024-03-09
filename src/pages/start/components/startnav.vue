@@ -28,9 +28,9 @@ const datav2 = reactive([
 ])
 
 const datav3 = reactive([
-  { name: '登录获取Tocken', path: "/start/login" },
+  { name: 'Tocken', path: "/start/login" },
   { name: '注册', path: "/start/register" },
-  { name: '修改密码', path: "/start/changepassword" },
+  { name: '改密', path: "/start/changepassword" },
 ])
 
 const GMTitle = ref("GM控制面板")
@@ -84,7 +84,7 @@ watch(
         <template #icon>
           <IconBug></IconBug>
         </template>
-        <template #title>废弃功能 </template>
+        <template #title>废弃</template>
         <a-menu-item v-for="(item, index) in datav2" :key="item.path" @click="topath(item.path)">
           {{ item.name }}
         </a-menu-item>
@@ -93,7 +93,7 @@ watch(
         <template #icon>
           <IconApps></IconApps>
         </template>
-        <template #title>GCAuth-暂未实现功能</template>
+        <template #title>废弃</template>
         <a-menu-item v-for="(item, index) in datav3" :key="item.path" @click="topath(item.path)">
           {{ item.name }}
         </a-menu-item>
